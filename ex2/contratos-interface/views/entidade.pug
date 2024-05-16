@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1= HeaderStr
+    p
+        strong NIPC: #{nipc}
+    p
+        strong Nome Entidade: #{nomeentidade.entidade_comunicante}
+    table
+        thead
+            tr
+                th Id Contrato
+                th Objeto Contrato
+                th Data de Celebração de Contrato
+                th Preço Contratual
+        tbody
+            each contract in contracts
+                tr
+                    td
+                        a(href='/' + contract._id)= contract._id
+                    td= contract.objectoContrato
+                    td= contract.dataCelebracaoContrato
+                    td= contract.precoContratual
+    p
+        strong Valor Total Contratos: #{totalContratos.count}

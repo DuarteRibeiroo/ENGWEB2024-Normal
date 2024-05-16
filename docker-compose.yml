@@ -1,0 +1,26 @@
+version: "2"
+services:
+ frontend:
+  container_name: contratos-interface
+  image: ewteste/contratos-interface
+  ports:
+    - "16001:16001"
+  depends_on:
+    - api
+  links:
+    - api
+ api:
+  container_name: contratos-api
+  image: ewteste/contratos-api
+  ports:
+    - "16000:16000"
+  depends_on:
+    - mongo
+  links:
+    - mongo
+ mongo:
+  container_name: mongo-server
+  image: mongo
+  ports:
+    - "27017:27017"
+

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= HeaderStr
+    p
+        strong Id Contrato: #{contract._id}
+    p
+        strong Objeto Contrato: #{contract.objectoContrato}
+    p
+        strong Data de Celebração de Contrato: #{contract.dataCelebracaoContrato}
+    p
+        strong Preço Contratual: #{contract.precoContratual}
+    p
+        strong Entidade Comunicante: #{contract.entidade_comunicante}
+    p
+        strong NIPC Entidade Comunicante: #{contract.NIPC_entidade_comunicante}
+    a(href='/') Voltar
